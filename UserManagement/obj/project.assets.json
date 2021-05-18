@@ -9231,11 +9231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HidGa\\Documents\\GitHub\\UserManagement\\UserManagement\\UserManagement\\UserManagement.csproj",
+      "projectUniqueName": "C:\\Users\\HidGa\\Documents\\GitHub\\Project UserManagement\\UserManagement\\UserManagement\\UserManagement.csproj",
       "projectName": "UserManagement",
-      "projectPath": "C:\\Users\\HidGa\\Documents\\GitHub\\UserManagement\\UserManagement\\UserManagement\\UserManagement.csproj",
+      "projectPath": "C:\\Users\\HidGa\\Documents\\GitHub\\Project UserManagement\\UserManagement\\UserManagement\\UserManagement.csproj",
       "packagesPath": "C:\\Users\\HidGa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HidGa\\Documents\\GitHub\\UserManagement\\UserManagement\\UserManagement\\obj\\",
+      "outputPath": "C:\\Users\\HidGa\\Documents\\GitHub\\Project UserManagement\\UserManagement\\UserManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -85,6 +85,7 @@ namespace UserManagement
             //    options.UseSqlServer(Configuration.GetConnectionString("MyConnection")).UseLazyLoadingProxies();
             //});
             //services.AddDbContext<MyContext>(b => b.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("MyConnection")));
+            
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44312"));
@@ -155,8 +156,8 @@ namespace UserManagement
 
             app.UseAuthorization();
 
-            app.UseCors();
-            //app.UseCors(options => options.WithOrigins("https://localhost:44336"));
+            //app.UseCors();
+            app.UseCors(options => options.WithOrigins("https://localhost:44312"));
 
             app.UseEndpoints(endpoints =>
             {

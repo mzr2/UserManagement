@@ -160,7 +160,9 @@ namespace UserManagement.Controllers
                 ).ToListAsync();
             return Ok(data);
         }
-        [Authorize(Roles = "Admin")]
+
+        //[Authorize(Roles = "Admin")]
+        [EnableCors("AllowOrigin")]
         [HttpGet("Profile/{NIK}")]
         public IActionResult Account(string NIK)
         {
