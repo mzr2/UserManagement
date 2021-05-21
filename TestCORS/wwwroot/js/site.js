@@ -18,10 +18,13 @@
 
 function dataUser(nik) {
     $.ajax({
-        url: "https://localhost:44338/API/Accounts/Profile/" + nik
+        //url: "https://localhost:44338/API/Accounts/Profile/" + nik
+        url: "/Accounts/GetUserDataDetail?Nik=" + nik
+    //}).done((result) => {
     }).done((result) => {
-        var ability = "";
         console.log(result);
+        //var result = resultUser.person;
+        //console.log(result);
         var text = `<ul>
                         <li>
                             Name      : ${result.firstName} ${result.lastName} 
@@ -63,7 +66,8 @@ $(document).ready(function () {
     var table = $('#example').DataTable({
         dom: 'lBfrtip',
         ajax: {
-            "url": "https://localhost:44338/API/Accounts/UserData",
+            "url": "/Accounts/GetUserData",
+            //"url": "https://localhost:44312/Accounts/GetAll",
             "datatype": "json",
             "dataSrc": ""
         },
@@ -92,7 +96,7 @@ $(document).ready(function () {
             { data: 'gpa'},
             { data: 'universityName' },
             //{ data: null, defaultContent: '<button class="btn btn-primary" id="detailbutton">Detail</button>|<button class="btn btn-primary" id="deletebutton">Delete</button>|<button class="btn btn-primary" id="editbutton">Edit</button>', targets: -1, "orderable": false}
-            { data: null, defaultContent: '<div class="btn-group mr-2" role="group" aria-label="First group"><button class="btn btn-primary" id="detailbutton"><i class="fa fa-trash"></i></button>|<button class="btn btn-primary" id="deletebutton">Delete</button>|<button class="btn btn-primary" id="editbutton">Edit</button></div>', targets: -1, "orderable": false}
+            { data: null, defaultContent: '<div class="btn-group mr-2" role="group" aria-label="First group"><button class="btn btn-primary" id="detailbutton"><i class="fas fa-eye"></i></button>|<button class="btn btn-danger" id="deletebutton"><i class="fas fa-trash"></i></button>|<button class="btn btn-secondary" id="editbutton"><i class="fas fa-edit"></i></button></div>', targets: -1, "orderable": false}
         ],
         buttons: [
             {

@@ -97,8 +97,8 @@ namespace UserManagement
 
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
-                //c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44312"));
+                //c.AddPolicy("AllowOrigin", options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:44312"));
                 //c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44336"));
             });
 
@@ -166,9 +166,9 @@ namespace UserManagement
 
             app.UseAuthorization();
 
-            //app.UseCors();
+            app.UseCors();
             //app.UseCors(options => options.WithOrigins("https://localhost:44312"));
-            app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+            //app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {

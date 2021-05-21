@@ -26,7 +26,7 @@ namespace UserManagement.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
+    //[EnableCors("AllowOrigin")]
     [Consumes("application/json")]
     public class AccountsController : BaseController<Account, AccountRepository, string>
     {
@@ -125,7 +125,7 @@ namespace UserManagement.Controllers
         }
 
         //[Authorize]
-        [EnableCors("AllowOrigin")]
+        //[EnableCors("AllowOrigin")]
         [HttpGet("UserData")]
         public async Task<IActionResult> Account()
         {
