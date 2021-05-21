@@ -26,6 +26,7 @@ namespace UserManagement.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     [Consumes("application/json")]
     public class AccountsController : BaseController<Account, AccountRepository, string>
     {
@@ -41,7 +42,9 @@ namespace UserManagement.Controllers
             _configuration = configuration;
         }
 
+        [EnableCors("AllowOrigin")]
         [HttpPost("Register")]
+        [Produces("application/json")]
         public IActionResult Register(RegisterVM registerVM)
         {
             try

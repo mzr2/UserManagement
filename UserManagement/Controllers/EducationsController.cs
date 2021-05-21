@@ -13,7 +13,7 @@ namespace UserManagement.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[EnableCors("AllowOrigin")]
+    [EnableCors("AllowOrigin")]
     public class EducationsController : BaseController<Education, EducationRepository, int>
     {
         public EducationsController(EducationRepository educationRepository): base(educationRepository)

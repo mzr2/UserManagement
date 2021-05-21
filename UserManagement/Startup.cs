@@ -85,10 +85,20 @@ namespace UserManagement
             //    options.UseSqlServer(Configuration.GetConnectionString("MyConnection")).UseLazyLoadingProxies();
             //});
             //services.AddDbContext<MyContext>(b => b.UseLazyLoadingProxies().UseSqlServer(Configuration.GetConnectionString("MyConnection")));
-            
+
+            services.AddControllers(options =>
+            {
+                options.RespectBrowserAcceptHeader = true; // false by default
+            });
+
+            services.AddControllers()
+            .AddJsonOptions(options =>
+               options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44312"));
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+                //c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44312"));
                 //c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:44336"));
             });
 
@@ -157,7 +167,8 @@ namespace UserManagement
             app.UseAuthorization();
 
             //app.UseCors();
-            app.UseCors(options => options.WithOrigins("https://localhost:44312"));
+            //app.UseCors(options => options.WithOrigins("https://localhost:44312"));
+            app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
